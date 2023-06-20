@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title style="font-family: cursive">Brain Tumor Detection</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+
+      .background {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 400%;
+        text-shadow: 2px 2px 4px #bebb18;
+      }
+
+      .yolo-button {
+        position: relative;
+        margin: -300px;
+        top: 30%;
+        left: 40%;
+        bottom: 30%;
+      }
+
+      .button {
+        border: none;
+        color: rgb(235, 240, 243);
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        width: 250px;
+      }
+
+      .button1 {
+        background-color: rgb(0, 0, 0);
+        color: rgb(140, 148, 146);
+        border: 2px solid;
+      }
+
+      .button1:hover {
+        color: white;
+      }
+
+      .col-sm {
+        position: relative;
+        bottom: 25 0px;
+      }
+
+      .bas {
+        font-size: 400%;
+        text-shadow: 2px 2px 10px #8f8d8d;
+        color: #212020;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+        ></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large"
+          >Heang Seavleu 202230251</a
+        >
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Yunju Jo 20191471</a
+        >
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Elia Alshaiban 202230254</a
+        >
+      </div>
+    </div>
+
+    <div class="w3-content" style="max-width: 2000px; margin-top: 100px">
+      <div class="mySlides w3-display-container w3-center">
+        <img
+          src="https://i.hizliresim.com/iwkw71m.gif"
+          style="width: 100%; height: 200"
+        />
+
+        <div
+          class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"
+        >
+          <div class="col-sm">
+            <h1 class="bas"><b>Welcome to Our Brain Tumor Detection</b></h1>
+
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+
+            <div class="yolo-button">
+              <div class="w3-third w3-margin-bottom">
+                <div
+                  class="w3-container w3-dark-grey"
+                  style="margin-right: 20px"
+                >
+                  <p><b>Classification Problem</b></p>
+                  <br />
+                  <form action="/" method="post" enctype="multipart/form-data">
+                    <input
+                      class="button button1"
+                      type="file"
+                      name="imagefile"
+                    /><br /><br />
+                    <b>
+                      <input
+                        class="button button1"
+                        type="submit"
+                        value="Predict Image"
+                    /></b>
+                  </form>
+
+                  <!-- Flask -->
+                  {% if predicted %}
+                  <p class="w3-text-center">This image {predicted}</p>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <div
+                  class="w3-container w3-animate-fading"
+                  style="margin-right: 20px"
+                >
+                  <iframe
+                    src="https://giphy.com/embed/TQGaUJnE47XbyN4gY7"
+                    width="480"
+                    height="270"
+                    frameborder="0"
+                    class="giphy-embed"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Automatic Slideshow - change image every 4 seconds
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 4000);
+      }
+    </script>
+  </body>
+</html>
